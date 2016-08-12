@@ -6,12 +6,14 @@
  * Author: Jay Traband
  */
 
- (function(global){
+(function(global){
     if (typeof window === "undefined") {
         window = this;
         window.require = require;
+        window.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
+        window.DOMParser = require('xmldom').DOMParser;
     }
-})(this);
+})(global);
 
 (function (global, definition) {
     var def = function(){ return definition(global); };
@@ -16557,7 +16559,7 @@ breeze.SaveOptions = SaveOptions;
   proto._catchNoConnectionError = abstractDsaProto._catchNoConnectionError;
   proto.changeRequestInterceptor = abstractDsaProto.changeRequestInterceptor;
   proto._createChangeRequestInterceptor = abstractDsaProto._createChangeRequestInterceptor;
-  proto.headers = { "DataServiceVersion": "2.0" };
+  proto.headers = { "DataServiceVersion": "3.0" };
 
   // Absolute URL is the default as of Breeze 1.5.5.  
   // To use relative URL (like pre-1.5.5), add adapterInstance.relativeUrl = true:
@@ -16872,7 +16874,7 @@ breeze.SaveOptions = SaveOptions;
     saveBundle.entities.forEach(function (entity, index) {
       var aspect = entity.entityAspect;
       id = id + 1; // we are deliberately skipping id=0 because Content-ID = 0 seems to be ignored.
-      var request = { headers: { "Content-ID": id, "DataServiceVersion": "2.0" } };
+      var request = { headers: { "Content-ID": id, "DataServiceVersion": "3.0" } };
       contentKeys[id] = entity;
       if (aspect.entityState.isAdded()) {
         request.requestUri = routePrefix + entity.entityType.defaultResourceName;

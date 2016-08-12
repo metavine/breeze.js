@@ -27,6 +27,7 @@
   var proto = ctor.prototype; // minifies better (as seen in jQuery)
 
   proto.initialize = function () {
+    OData = core.requireLib("OData");
     // if OData is null, it is either not included in the html file or it is run in the node
     // so we try to load datajs, if this is run in browser, it trigger the error
     // if it is in node, we load it from window.OData
@@ -42,7 +43,7 @@
   proto._catchNoConnectionError = abstractDsaProto._catchNoConnectionError;
   proto.changeRequestInterceptor = abstractDsaProto.changeRequestInterceptor;
   proto._createChangeRequestInterceptor = abstractDsaProto._createChangeRequestInterceptor;
-  proto.headers = { "DataServiceVersion": "2.0" };
+  proto.headers = { "DataServiceVersion": "3.0" };
 
   // Absolute URL is the default as of Breeze 1.5.5.  
   // To use relative URL (like pre-1.5.5), add adapterInstance.relativeUrl = true:
@@ -63,7 +64,7 @@
     // only prefix with serviceName if not already on the url
     var base = (core.stringStartsWith(url, serviceName)) ? '' : serviceName;
     // If no protocol, turn base into an absolute URI
-    if (window && serviceName.indexOf('//') < 0) { 
+    if (window && window.location && window.location.protocol && window.location.host && serviceName.indexOf('//') < 0) { 
       // no protocol; make it absolute
       base = window.location.protocol + '//' + window.location.host + 
             (core.stringStartsWith(serviceName, '/') ? '' : '/') +
@@ -357,7 +358,7 @@
     saveBundle.entities.forEach(function (entity, index) {
       var aspect = entity.entityAspect;
       id = id + 1; // we are deliberately skipping id=0 because Content-ID = 0 seems to be ignored.
-      var request = { headers: { "Content-ID": id, "DataServiceVersion": "2.0" } };
+      var request = { headers: { "Content-ID": id, "DataServiceVersion": "3.0" } };
       contentKeys[id] = entity;
       if (aspect.entityState.isAdded()) {
         request.requestUri = routePrefix + entity.entityType.defaultResourceName;

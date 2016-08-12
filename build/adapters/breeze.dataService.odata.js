@@ -27,6 +27,7 @@
   var proto = ctor.prototype; // minifies better (as seen in jQuery)
 
   proto.initialize = function () {
+    OData = core.requireLib("OData");
     // if OData is null, it is either not included in the html file or it is run in the node
     // so we try to load datajs, if this is run in browser, it trigger the error
     // if it is in node, we load it from window.OData
@@ -63,7 +64,7 @@
     // only prefix with serviceName if not already on the url
     var base = (core.stringStartsWith(url, serviceName)) ? '' : serviceName;
     // If no protocol, turn base into an absolute URI
-    if (window && serviceName.indexOf('//') < 0) { 
+    if (window && window.location && window.location.protocol && window.location.host && serviceName.indexOf('//') < 0) { 
       // no protocol; make it absolute
       base = window.location.protocol + '//' + window.location.host + 
             (core.stringStartsWith(serviceName, '/') ? '' : '/') +

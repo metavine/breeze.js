@@ -5933,7 +5933,9 @@ var DataType = (function () {
     var parts = typeName.split(".");
     if (parts.length > 1) {
       var simpleName = parts[1];
-      if (simpleName === "image") {
+      var lowerCaseName = simpleName.toLowerCase();
+      // we could have Edm.Stream type
+      if (lowerCaseName === "image" || lowerCaseName === "stream") {
         // hack
         dt = DataType.Byte;
       } else if (parts.length === 2) {
@@ -16543,7 +16545,9 @@ breeze.SaveOptions = SaveOptions;
   var proto = ctor.prototype; // minifies better (as seen in jQuery)
 
   proto.initialize = function () {
-    OData = core.requireLib("OData");
+    // first attempt to require the OData library (datajs)
+    core.requireLib("OData");
+
     // if OData is null, it is either not included in the html file or it is run in the node
     // so we try to load datajs, if this is run in browser, it trigger the error
     // if it is in node, we load it from window.OData

@@ -686,7 +686,9 @@ var DataType = (function () {
     var parts = typeName.split(&quot;.&quot;);
     if (parts.length &gt; 1) {
       var simpleName = parts[1];
-      if (simpleName === &quot;image&quot;) {
+      var lowerCaseName = simpleName.toLowerCase();
+      // we could have Edm.Stream type
+      if (lowerCaseName === &quot;image&quot; || lowerCaseName === &quot;stream&quot;) {
         // hack
         dt = DataType.Byte;
       } else if (parts.length === 2) {

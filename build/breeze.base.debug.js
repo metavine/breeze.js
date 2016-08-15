@@ -12,7 +12,8 @@
         window.require = require;
         window.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         window.DOMParser = require('xmldom').DOMParser;
-})(this);
+    }
+})(global);
 
 (function (global, definition) {
     var def = function(){ return definition(global); };
@@ -5932,7 +5933,9 @@ var DataType = (function () {
     var parts = typeName.split(".");
     if (parts.length > 1) {
       var simpleName = parts[1];
-      if (simpleName === "image") {
+      var lowerCaseName = simpleName.toLowerCase();
+      // we could have Edm.Stream type
+      if (lowerCaseName === "image" || lowerCaseName === "stream") {
         // hack
         dt = DataType.Byte;
       } else if (parts.length === 2) {

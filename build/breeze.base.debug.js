@@ -12,8 +12,7 @@
         window.require = require;
         window.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         window.DOMParser = require('xmldom').DOMParser;
-    }
-})(global);
+})(this);
 
 (function (global, definition) {
     var def = function(){ return definition(global); };

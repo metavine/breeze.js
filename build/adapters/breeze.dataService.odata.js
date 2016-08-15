@@ -43,7 +43,7 @@
   proto._catchNoConnectionError = abstractDsaProto._catchNoConnectionError;
   proto.changeRequestInterceptor = abstractDsaProto.changeRequestInterceptor;
   proto._createChangeRequestInterceptor = abstractDsaProto._createChangeRequestInterceptor;
-  proto.headers = { "DataServiceVersion": "3.0" };
+  proto.headers = { "DataServiceVersion": "2.0" };
 
   // Absolute URL is the default as of Breeze 1.5.5.  
   // To use relative URL (like pre-1.5.5), add adapterInstance.relativeUrl = true:

@@ -1,6 +1,6 @@
 {
   "name": "node-breeze",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "breeze.debug",
   "devDependencies": {
     "event-stream": "^3.2.1",
@@ -25,5 +25,25 @@
     "q": "^1.4.1",
     "xmldom": "^0.1.22",
     "xmlhttprequest": "^1.8.0"
-  }
+  },
+  "description": "A fork of breeze.js OData javascript library. Features are added to support Nodejs environment",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metavine/breeze.js.git"
+  },
+  "keywords": [
+    "OData",
+    "Breeze.js",
+    "datajs",
+    "odatajs"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/metavine/breeze.js/issues"
+  },
+  "homepage": "https://github.com/metavine/breeze.js"
 }

@@ -16679,7 +16679,7 @@ breeze.SaveOptions = SaveOptions;
     // so we try to load datajs, if this is run in browser, it trigger the error
     // if it is in node, we load it from window.OData
     if (!this.OData) {
-      core.requireLib("datajs", "Needed to support remote OData services");
+      core.requireLib(breeze.datajsLib || "datajs", "Needed to support remote OData services");
       
       this.OData = window.OData;
     }
@@ -17177,7 +17177,7 @@ breeze.SaveOptions = SaveOptions;
   breeze.core.extend(odata4Ctor.prototype, odataAdapterCtor.prototype);
   odata4Ctor.prototype.initialize = function () {
       if (!window.odatajs) {
-          breeze.core.requireLib("odatajs", "Needed to support remote OData v4 services");
+          breeze.core.requireLib(breeze.odatajsLib || "odatajs", "Needed to support remote OData v4 services");
       }
       this.OData = window.odatajs.oData;
   };

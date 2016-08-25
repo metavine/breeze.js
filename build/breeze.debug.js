@@ -8,12 +8,12 @@
 
 (function(global){
     if (typeof window === "undefined") {
-        window = this;
+        window = this; // global could be a just a local object (this init function)
         window.require = require;
         window.XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
         window.DOMParser = require('xmldom').DOMParser;
     }
-})(global);
+})(this);
 
 (function (global, definition) {
     var def = function(){ return definition(global); };
@@ -16669,6 +16669,11 @@ breeze.SaveOptions = SaveOptions;
   var proto = ctor.prototype; // minifies better (as seen in jQuery)
 
   proto.initialize = function () {
+    // maybe the OData is loaded
+    if (window && window.OData) {
+      this.OData = window.OData;
+    }
+
     if (!this.OData) {
       // first attempt to require the OData library (datajs)
       core.requireLib("OData");

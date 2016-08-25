@@ -1,4 +1,4 @@
-// Generated on: Wed Aug 24 2016 15:24:36 GMT+1000 (AEST)
+// Generated on: Thu Aug 25 2016 11:01:53 GMT+1000 (AEST)
 intellisense.annotate(breeze.core, {
   'Enum': function() {
     /// <signature>
@@ -1245,6 +1245,8 @@ intellisense.annotate(breeze.breeze.DataType, {
   'Guid': null,
   /// <field name="Binary" type="breeze.breeze.DataType" ></field>
   'Binary': null,
+  /// <field name="Collection" type="breeze.breeze.DataType" ></field>
+  'Collection': null,
   /// <field name="Undefined" type="breeze.breeze.DataType" ></field>
   'Undefined': null,
 });

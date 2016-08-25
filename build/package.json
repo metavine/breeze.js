@@ -1,6 +1,6 @@
 {
   "name": "node-breeze",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "breeze.debug",
   "devDependencies": {
     "event-stream": "^3.2.1",
@@ -19,7 +19,7 @@
     "yuidocjs": "^0.3.50"
   },
   "dependencies": {
-    "node-datajs": "^1.0.3",
+    "node-datajs": "^2.0.0",
     "jquery": "^3.1.0",
     "odatajs": "^4.0.0",
     "q": "^1.4.1",

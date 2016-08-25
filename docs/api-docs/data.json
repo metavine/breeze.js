@@ -257,6 +257,13 @@
             "fors": {},
             "namespaces": {}
         },
+        "b00_breeze.dataService.odata4.js": {
+            "name": "b00_breeze.dataService.odata4.js",
+            "modules": {},
+            "classes": {},
+            "fors": {},
+            "namespaces": {}
+        },
         "iface.ajaxInterface.js": {
             "name": "iface.ajaxInterface.js",
             "modules": {},
@@ -8747,6 +8754,13 @@
             "module": "breeze"
         },
         {
+            "file": "b00_breeze.dataService.odata4.js",
+            "line": 1,
+            "description": "Consider merge code from : https://github.com/metavine/breezejs-odata4-adapter/blob/master/breezeOdataV4Adapter.js\n\nwhich is the results of:\n\n Michael and Travis Schettler",
+            "class": "{ajax_interface}",
+            "module": "breeze"
+        },
+        {
             "file": "iface.ajaxInterface.js",
             "line": 12,
             "description": "Performs an ajax request. This method takes a single argument — a configuration object — that is used to generate an HTTP request. The config object has two callback methods:\n'success' and 'error' in addition to a number of properties that may be used to configure the request itself. Higher level Breeze constructs will wrap calls to the ajax adapter\ninto Promises. Individual adapters may add additional properties to the basic config object described below.",
@@ -8913,5 +8927,10 @@
             "module": "breeze"
         }
     ],
-    "warnings": []
+    "warnings": [
+        {
+            "message": "Missing item type\nConsider merge code from : https://github.com/metavine/breezejs-odata4-adapter/blob/master/breezeOdataV4Adapter.js\n\nwhich is the results of:\n\n Michael and Travis Schettler",
+            "line": " b00_breeze.dataService.odata4.js:1"
+        }
+    ]
 }

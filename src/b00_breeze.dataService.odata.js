@@ -380,12 +380,12 @@
         request.data = helper.unwrapInstance(entity, that.transformValue.bind(that));
         tempKeys[id] = aspect.getKey();
       } else if (aspect.entityState.isModified()) {
-        updateDeleteMergeRequest(request, aspect, routePrefix);
+        that.updateDeleteMergeRequest(request, aspect, routePrefix);
         request.method = "MERGE";
         request.data = helper.unwrapChangedValues(entity, entityManager.metadataStore, that.transformValue.bind(that));
         // should be a PATCH/MERGE
       } else if (aspect.entityState.isDeleted()) {
-        updateDeleteMergeRequest(request, aspect, routePrefix);
+       that. updateDeleteMergeRequest(request, aspect, routePrefix);
         request.method = "DELETE";
       } else {
         return;

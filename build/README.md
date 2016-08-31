@@ -1,5 +1,11 @@
 
-It is a fully functional javascript library to be used in Nodejs to read from OData service.
+It is a fully functional breeze.js javascript library fork for Nodejs with supports of OData service (V2, V3, and V4).
+
+*.0.1.11
+* Readme fixes
+
+* 0.1.10
+fixed a bug for missing handler
 
 * 0.1.9
 fixed a bug in creating change requests for the adapter

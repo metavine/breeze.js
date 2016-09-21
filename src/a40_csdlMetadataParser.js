@@ -263,12 +263,14 @@ function CsdlMetadataParser () {
     // Complex properties are never nullable ( per EF specs)
     // var isNullable = csdlProperty.nullable === 'true' || csdlProperty.nullable == null;
     // var complexTypeName = csdlProperty.type.split("Edm.")[1];
-    var complexTypeName = this.parseTypeNameWithSchema(csdlProperty.type, schema).typeName;
+    var complexType = this.parseTypeNameWithSchema(csdlProperty.type, schema);
+    var complexTypeName = complexType.typeName;
     // can't set the name until we go thru namingConventions and these need the dp.
     var dp = new DataProperty({
       nameOnServer: csdlProperty.name,
       complexTypeName: complexTypeName,
-      isNullable: false
+      isNullable: false,
+      isCollection: !!complexType.isCollection
     });
 
     return dp;

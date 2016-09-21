@@ -2003,6 +2003,7 @@ var DataProperty = (function () {
         .whereParam("enumType").isOptional()
         .whereParam("rawTypeName").isOptional() // occurs with undefined datatypes
         .whereParam("custom").isOptional()
+        .whereParam("isCollection").isBoolean().isOptional().withDefault(false)
         .applyAll(this);
     var hasName = !!(this.name || this.nameOnServer);
     if (!hasName) {

@@ -1,6 +1,6 @@
 {
   "name": "node-breeze",
-  "version": "0.1.11",
+  "version": "0.1.15",
   "main": "breeze.debug",
   "devDependencies": {
     "event-stream": "^3.2.1",

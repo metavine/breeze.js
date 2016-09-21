@@ -1,8 +1,20 @@
 
-It is a fully functional breeze.js javascript library fork for Nodejs with supports of OData service (V2, V3, and V4).
+It is a breeze.js javascript library fork for Nodejs with fully functional supports of OData services (V2, V3, and partially V4).
 
-*.0.1.11
-* Readme fixes
+* 0.1.15
+added a fix for adding function type into the EntityManager when EntityType is the input parameter data type of function
+
+* 0.1.14
+treats function is a special type of EntityType
+
+* 0.1.13
+fixed for function type parsing
+
+* 0.1.12
+added function type parsing support
+
+* 0.1.11
+README reworded
 
 * 0.1.10
 fixed a bug for missing handler
